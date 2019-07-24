@@ -8,7 +8,7 @@ namespace Sweepstakes
 {
     class MarketingFirm
     {
-        ISweepstakesManager manager;
+        public ISweepstakesManager manager;
         public MarketingFirm()
         {
             bool validInput;

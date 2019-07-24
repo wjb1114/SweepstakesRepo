@@ -20,5 +20,10 @@ namespace Sweepstakes
             EmailAddress = email;
             RegistrationNumber = idNumber;
         }
+
+        public Contestant()
+        {
+            Creation.CreateNewContestant();
+        }
     }
 }
