@@ -8,17 +8,17 @@ namespace Sweepstakes
 {
     class Contestant
     {
-        string firstName;
-        string lastName;
-        string emailAddress;
-        int registrationNumber;
+        public string FirstName { get; private set; }
+        public string LastName { get; private set; }
+        public string EmailAddress { get; private set; }
+        public int RegistrationNumber { get; private set; }
 
         public Contestant(string first, string last, string email, int idNumber)
         {
-            firstName = first;
-            lastName = last;
-            emailAddress = email;
-            registrationNumber = idNumber;
+            FirstName = first;
+            LastName = last;
+            EmailAddress = email;
+            RegistrationNumber = idNumber;
         }
     }
 }
