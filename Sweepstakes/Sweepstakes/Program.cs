@@ -15,16 +15,8 @@ namespace Sweepstakes
             firm.manager.InsertSweepstakes(sweep);
 
             Contestant c1 = Creation.CreateNewContestant();
-            Contestant c2 = Creation.CreateNewContestant();
-            Contestant c3 = Creation.CreateNewContestant();
-            Contestant c4 = Creation.CreateNewContestant();
-            Contestant c5 = Creation.CreateNewContestant();
 
             sweep.RegisterContestant(c1);
-            sweep.RegisterContestant(c2);
-            sweep.RegisterContestant(c3);
-            sweep.RegisterContestant(c4);
-            sweep.RegisterContestant(c5);
 
             sweep.PickWinner();
 
