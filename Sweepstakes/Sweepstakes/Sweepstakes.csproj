@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Contestant.cs" />
     <Compile Include="Creation.cs" />
+    <Compile Include="IContestEntrant.cs" />
     <Compile Include="ISweepstakesManager.cs" />
     <Compile Include="MarketingFirm.cs" />
     <Compile Include="Program.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="SweepstakesManagerFactory.cs" />
     <Compile Include="SweepstakesQueueManager.cs" />
     <Compile Include="SweepstakesStackManager.cs" />
+    <Compile Include="WinningContestant.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

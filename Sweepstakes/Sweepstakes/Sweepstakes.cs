@@ -8,24 +8,32 @@ namespace Sweepstakes
 {
     class Sweepstakes
     {
-        Dictionary<int, Contestant> entries;
+        Dictionary<int, IContestEntrant> entries;
         Random rand;
         public Sweepstakes()
         {
-            entries = new Dictionary<int, Contestant>();
+            entries = new Dictionary<int, IContestEntrant>();
             rand = new Random();
             System.Threading.Thread.Sleep(5);
         }
 
         public void RegisterContestant(Contestant contestant)
         {
-            entries.Add(contestant.RegistrationNumber, contestant);
+            entries.Add(contestant.GetRegistration(), contestant);
         }
 
         public string PickWinner()
         {
             int randomNumber = rand.Next(0, entries.Count);
-            return entries.ElementAt(randomNumber).Value.EmailAddress;
+            IContestEntrant winner = entries.ElementAt(randomNumber).Value;
+            entries.Remove(winner.GetRegistration());
+            WinningContestant winningContestant = new WinningContestant(winner.GetFirstName(), winner.GetLastName(), winner.GetEmailAddress(), winner.GetRegistration());
+            entries.Add(winningContestant.GetRegistration(), winningContestant);
+            for (int i = 0; i < entries.Count; i++)
+            {
+                entries.ElementAt(i).Value.SendMessage(winningContestant);
+            }
+            return entries.ElementAt(randomNumber).Value.GetEmailAddress();
         }
 
         public void PrintContestantInfo(Contestant contestant)

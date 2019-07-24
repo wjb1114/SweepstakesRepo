@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    class Contestant : IContestEntrant
+    class WinningContestant : IContestEntrant
     {
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
         public string EmailAddress { get; private set; }
         public int RegistrationNumber { get; private set; }
 
-        public Contestant(string first, string last, string email, int idNumber)
+        public WinningContestant(string first, string last, string email, int idNumber)
         {
             FirstName = first;
             LastName = last;
@@ -21,18 +21,18 @@ namespace Sweepstakes
             RegistrationNumber = idNumber;
         }
 
-        public Contestant()
+        public WinningContestant()
         {
             Creation.CreateNewContestant();
         }
+
         public string GetEmailAddress()
         {
             return EmailAddress;
         }
-
         public void SendMessage(IContestEntrant winner)
         {
-            Console.WriteLine(FirstName + " " + LastName + ", unfortuantely, " + winner.GetName() + " won the sweepstakes.");
+            Console.WriteLine(winner.GetName() + ", you won the sweepstakes!");
         }
         public string GetName()
         {
