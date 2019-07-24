@@ -12,7 +12,17 @@ namespace Sweepstakes
 
         public SweepstakesQueueManager()
         {
+            sweepstakesCollection = new Queue<Sweepstakes>();
+        }
 
+        public void InsertSweepstakes(Sweepstakes sweepstakes)
+        {
+            sweepstakesCollection.Enqueue(sweepstakes);
+        }
+
+        public Sweepstakes GetSweepstakes()
+        {
+            return sweepstakesCollection.Dequeue();
         }
     }
 }

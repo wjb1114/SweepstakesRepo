@@ -12,7 +12,17 @@ namespace Sweepstakes
 
         public SweepstakesStackManager()
         {
+            sweepstakesCollection = new Stack<Sweepstakes>();
+        }
 
+        public void InsertSweepstakes(Sweepstakes sweepstakes)
+        {
+            sweepstakesCollection.Push(sweepstakes);
+        }
+
+        public Sweepstakes GetSweepstakes()
+        {
+            return sweepstakesCollection.Pop();
         }
     }
 }
